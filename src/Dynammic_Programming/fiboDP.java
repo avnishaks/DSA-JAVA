@@ -1,4 +1,4 @@
-package January_2022;
+package Dynammic_Programming;
 
 import java.util.Scanner;
 

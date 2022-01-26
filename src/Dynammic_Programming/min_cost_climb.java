@@ -1,5 +1,5 @@
 // 746. Min Cost Climbing Stairs
-package January_2022;
+package Dynammic_Programming;
 
 public class min_cost_climb {
     public static int minCostClimbingStairs(int[] cost) {
