@@ -1,15 +1,5 @@
 package January_2022;
 
-/*
-1 2 3 1
-
-first include the first house and leave the last
- 1 2 3 -> part of calculation
- dp1 -> not include house last and find max
- 2 3 1 -> part of calculation
- dp2-> not include house first and find max
- return the max of dp1 or dp2 .
- */
 
 public class House_Robber_II {
     public static int rob(int[] nums){
