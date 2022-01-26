@@ -1,6 +1,7 @@
 package January_2022;
 
 /*
+ Leetcode
   Here we have an array of size 10^4
   so count contain all element from O to 10000
   then we mention the freq of all the nums element in count array
