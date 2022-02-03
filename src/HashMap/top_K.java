@@ -20,12 +20,13 @@ public class top_K {
     public static void topKFrequent(int[] nums, int k) {
         HashMap<Integer,Integer> hm=new HashMap<>();
         for(int val:nums){
-            if(hm.containsKey(val)){
-                hm.put(val,hm.get(val)+1);
-            }
-            else{
-                hm.put(val,1);
-            }
+            hm.put(val,1+hm.getOrDefault(val,0));
+            //  if(hm.containsKey(val)){
+            //      hm.put(val,hm.get(val)+1);
+            //  }
+            //  else{
+            //      hm.put(val,1);
+            //  }
         }
         HashMap<Integer,Integer> hm1=sortMap(hm);
         int val= hm1.size()-k;
@@ -42,6 +43,7 @@ public class top_K {
         for(int j=0;j< ans.length;j++){
             System.out.print(ans[j]+" ");
         }
+
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
