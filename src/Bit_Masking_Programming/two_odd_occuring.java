@@ -108,7 +108,7 @@ public class two_odd_occuring {
      a) result 1 = 8 ( from group 1 )
      b) result 2 = 32 ( from group 2) -> (x^x=0)
 
-     5. Thus we get the final answer as the 5 and 32 .
+     5. Thus we get the final answer as the 8 and 32 .
 
      */
     public static void Bits_Approach(int [] arr){
