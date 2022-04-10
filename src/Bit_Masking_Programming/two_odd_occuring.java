@@ -8,7 +8,7 @@ in even number of times. Our task is to return the those two element which is li
 Approach:-
 1. Two For Loop ( O(n^2) )
 2. Brute Force using sorting ( O(n*log(n) )
-3. Bits Manipulation
+3. Bits Manipulation O(N)
  */
 
 
@@ -127,6 +127,8 @@ public class two_odd_occuring {
         }
         System.out.println(res1+"   "+res2);
     }
+
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n= sc.nextInt();
