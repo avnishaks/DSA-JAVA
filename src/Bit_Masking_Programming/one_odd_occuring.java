@@ -8,6 +8,9 @@ Questions:----
 
 In the given array , all the number appearing even number of times , only one number appear odd
 number of times, then return the given number.
+1. Two For Loop o(N^2)
+2. Naive Sorting O(N*log(N)).
+3. Bits Manipulation O(N)
  */
 public class one_odd_occuring {
 
@@ -51,6 +54,22 @@ public class one_odd_occuring {
         }
         return -1;
     }
+    /*
+     In the method of Bits Manipulation ,which generally take Time Complexity of O(N) and Space Complexity O(1).
+
+     1. We take the xor with all the number , which ultimate give the odd number of times occurring of the number.
+     2. x^x=0 , x^0 =x , x^y=y^x , x^(y^z)=(x^y)^z.
+     3. As we see even number of occuring of number gives the result as , 0 ,and xor with any number with zero is
+        number itself.
+     */
+
+    public static int BitsWalaApproach(int [] arr){
+        int count=0;
+        for(int i=0;i< arr.length;i++){
+            count=count^arr[i];
+        }
+        return count;
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n= sc.nextInt();
@@ -58,9 +77,12 @@ public class one_odd_occuring {
         for(int i=0;i<n;i++){
             arr[i]= sc.nextInt();
         }
-        System.out.println("Dekh le Bhai Answer --> Brute Force Wala, in desi langauage with 2 for Loop ");
+        System.out.println("Dekh le Bhai Answer --> Brute Force Wala, in desi langauage with 2 for Loop O(N^2) ");
         System.out.println(TwoForLoop(arr));
-        System.out.println("Dekh Le Bhai Answer --> Brute Force Wala , After Sorting !!! ");
+        System.out.println("Dekh Le Bhai Answer --> Brute Force Wala , After Sorting O(N*log(N)) !!! ");
         System.out.println(Naive_findOddAppear(arr));
+
+        System.out.println("Dekh Le Bhai Answer --> Bits Manipulation se--> O(n) Time lega aur O(1) space lega !");
+        System.out.println(BitsWalaApproach(arr));
     }
 }
