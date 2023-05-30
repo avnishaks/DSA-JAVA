@@ -1,23 +1,43 @@
 package Array_String;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class arms {
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int temp=n;
-        int r,sum=0;
-        while(temp>0){
-           r=temp%10;
-           temp=temp/10;
-           sum=sum+r*r*r;
+public class  arms {
+    public static boolean isPossible(String str, int target) {
+        if (str.isEmpty() && target == 0)
+            return true;
+
+        for (int i = 1; i <= str.length(); i++) {
+            int num = Integer.parseInt(str.substring(0, i));
+            if (num <= target && isPossible(str.substring(i), target - num)) {
+                return true;
+            }
         }
-        if(sum==n){
-            System.out.println("true");
-        }
-        else{
-            System.out.println("false");
-        }
+        return false;
     }
+
+        public static int punishmentNumber(int n) {
+            int sumPunishment = 0;
+
+            for (int i = 1; i <= n; i++) {
+                int iSquared = i * i;
+                String iSquaredStr = String.valueOf(iSquared);
+
+                boolean partitionSum = isPossible(iSquaredStr,i);
+
+                if (partitionSum) {
+                    sumPunishment += iSquared;
+                }
+            }
+
+            return sumPunishment;
+        }
+
+        public static void main(String[] args) {
+            int n = 37;
+            int result = punishmentNumber(n);
+            System.out.println(result);  // Output: 1478
+        }
 }
+
+
